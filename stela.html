@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>stela</title>
+</head>
+<style>
+    canvas {
+        background: rgb(184, 184, 184);
+
+    }
+</style>
+
+<body>
+    <canvas id="mycanvas" width="500px" height="500px">
+
+    </canvas>
+
+
+    <script>
+        var canvas = document.getElementById('mycanvas');
+        var ctx = canvas.getContext('2d');
+        var figura = true;
+        var press = false;
+        const r = Math.floor(Math.random() * 256); // Valor de rojo entre 0 y 255
+        const g = Math.floor(Math.random() * 256); // Valor de verde entre 0 y 255
+        const b = Math.floor(Math.random() * 256); // Valor de azul entre 0 y 255
+        const a = Math.random(); // Valor de opacidad (alfa) entre 0 y 1
+        const rgbaColor = `rgba(${r}, ${g}, ${b}, ${a})`;
+
+
+        canvas.addEventListener("mousemove", (e) => {
+            if(press){
+                ctx.beginPath();
+            ctx.fillStyle = "rgba(232,11,11,0.5)";
+            ctx.arc(e.layerX, e.layerY, 20, 0, 2 * Math.PI);
+            ctx.fill();
+            ctx.stroke();
+            ctx.closePath();
+
+            }
+        });
+
+        canvas.addEventListener("mousedown", (e) => {
+            press = true;
+        });
+
+        canvas.addEventListener("mouseup", (e) => {
+            press = false;
+        });
+
+
+
+
+    </script>
+</body>
+
+</html>
