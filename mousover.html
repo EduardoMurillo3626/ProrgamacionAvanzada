@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mouseover</title>
+</head>
+<style>
+    canvas {
+        background: rgb(184, 184, 184);
+
+    }
+</style>
+
+<body>
+    <canvas id="mycanvas" width="500px" height="500px">
+
+    </canvas>
+
+
+    <script>
+        var canvas = document.getElementById('mycanvas');
+        var ctx = canvas.getContext('2d');
+        function generateRandomColor() {
+            const r = Math.floor(Math.random() * 256); // Valor de rojo entre 0 y 255
+            const g = Math.floor(Math.random() * 256); // Valor de verde entre 0 y 255
+            const b = Math.floor(Math.random() * 256); // Valor de azul entre 0 y 255
+            const a = Math.random(); // Valor de opacidad (alfa) entre 0 y 1
+
+            const rgbaColor = `rgba(${r}, ${g}, ${b}, ${a})`;
+            return rgbaColor;
+        }
+
+
+
+
+
+        canvas.addEventListener("mouseover", (e) => {
+            const randomColor = generateRandomColor();
+         
+        canvas.addEventListener("click", (e) => {
+            console.log("hola");
+            console.log(e);
+
+            ctx.beginPath();
+            ctx.fillStyle = randomColor;
+            ctx.arc(e.layerX, e.layerY, 20, 0, 2 * Math.PI);
+            ctx.fill();
+            ctx.stroke();
+        });      
+    });     
+    </script>
+</body>
+
+</html>
