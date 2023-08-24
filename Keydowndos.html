@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>keydown2</title>
+</head>
+<style>
+    canvas {
+        background: rgb(184, 184, 184);
+
+    }
+</style>
+
+<body>
+    <canvas id="mycanvas" width="500px" height="500px">
+
+    </canvas>
+
+
+    <script>
+        var canvas = document.getElementById('mycanvas');
+        var ctx = canvas.getContext('2d');
+        var x = 255, y = 255;
+        function generateRandomColor() {
+            const r = Math.floor(Math.random() * 256); // Valor de rojo entre 0 y 255
+            const g = Math.floor(Math.random() * 256); // Valor de verde entre 0 y 255
+            const b = Math.floor(Math.random() * 256); // Valor de azul entre 0 y 255
+            const a = Math.random(); // Valor de opacidad (alfa) entre 0 y 1
+
+            const rgbaColor = `rgba(${r}, ${g}, ${b}, ${a})`;
+            return rgbaColor;
+        }
+
+        const randomColor = generateRandomColor();
+
+        document.addEventListener("keydown", (e) => {
+            console.log(e)
+
+            switch (e.keyCode) {
+                case 87:
+                    y -=10;
+                break;
+                case 83:
+                    y +=10;
+                break;
+                case 68:
+                    x +=10;
+                break;
+                case 65:
+                    x -=10;
+                break;
+                    
+
+            }
+            repaint();
+
+        });
+        function repaint() {
+
+            ctx.fillRect(x, y, 50, 50);
+            ctx.strokeRect(x, y, 50, 50);
+
+            ctx.fillStyle = generateRandomColor();
+        }
+
+    </script>
+</body>
+
+</html>
