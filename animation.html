@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animation</title>
+</head>
+<style>
+    canvas {
+        background-color: antiquewhite;
+
+
+    }
+</style>
+
+<body>
+    <canvas id="mycanvas" width="500px" height="500px">
+
+    </canvas>
+
+
+    <script>
+        var canvas = document.getElementById('mycanvas');
+        var ctx = canvas.getContext('2d');
+        var x = 255, y = 255;
+        var dir = 0;
+        function generateRandomColor() {
+            const r = Math.floor(Math.random() * 256); // Valor de rojo entre 0 y 255
+            const g = Math.floor(Math.random() * 256); // Valor de verde entre 0 y 255
+            const b = Math.floor(Math.random() * 256); // Valor de azul entre 0 y 255
+            const a = Math.random(); // Valor de opacidad (alfa) entre 0 y 1
+
+            const rgbaColor = `rgba(${r}, ${g}, ${b}, ${a})`;
+            return rgbaColor;
+        }
+
+        const randomColor = generateRandomColor();
+
+        document.addEventListener("keydown", (e) => {
+            console.log(e)
+
+            switch (e.keyCode) {
+                case 87:
+                    dir = e.keyCode;
+
+                    break;
+                case 83:
+                    dir = e.keyCode;
+
+                    break;
+                case 68:
+                    dir = e.keyCode;
+
+                    break;
+                case 65:
+                    dir = e.keyCode;
+
+                    break;
+
+
+            }
+            //update();
+
+        });
+
+        function update() {
+            switch (dir) {
+                case 87:
+                    y -= 10;
+                    if (y < -50) { y = 550 }
+                    break;
+                case 83:
+                    y += 10;
+                    if (y > 550) { y = -50 }
+                    break;
+                case 68:
+                    x += 10;
+                    if (x > 550) { x = -50 }
+                    break;
+                case 65:
+                    x -= 10;
+                    if (x < -50) { x = 550 }
+                    break;
+
+            }
+            repaint();
+            window.requestAnimationFrame(update);
+        }
+
+        function repaint() {
+            ctx.fillStyle = "white";
+            ctx.fillRect(0, 0, 500, 500);
+            ctx.fillStyle = generateRandomColor();
+            ctx.fillRect(x, y, 50, 50);
+            ctx.strokeRect(x, y, 50, 50);
+
+
+        }
+
+        window.requestAnimationFrame = (function () {
+            return window.requestAnimationFrame ||
+                window.webkitRequestAnimationFrame ||
+                window.mozRequestAnimationFrame ||
+                function (callback) {
+                    window.setTimeout(callback, 17);
+                };
+        }());
+        window.requestAnimationFrame(update);
+
+    </script>
+</body>
+
+</html>
