@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mario</title>
+</head>
+<style>
+    canvas {
+        background: rgb(110, 162, 240);
+
+    }
+
+    body {
+        background-color: rgb(46, 46, 46);
+    }
+</style>
+
+<body>
+    <canvas id="mycanvas" width="600px" height="400px">
+
+    </canvas>
+
+
+    <script>
+        var canvas = document.getElementById('mycanvas');
+        var ctx = canvas.getContext('2d');
+
+
+
+        ctx.beginPath();
+        ctx.strokeStyle="rgba(0,0,0,1)";
+        ctx.strokeRect(20,180,40,40);
+        ctx.fillStyle = "#BF7122";
+        ctx.fillRect(20, 180, 40, 40,);
+        ctx.fill();
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.strokeStyle="rgba(0,0,0,1)";
+        ctx.strokeRect(120,90,40,40);
+        ctx.fillStyle = "#BF7122";
+        ctx.fillRect(120,90, 40, 40,);
+        ctx.fill();
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.strokeStyle="rgba(0,0,0,1)";
+        ctx.strokeRect(160,90,40,40);
+        ctx.fillStyle = "#BF7122";
+        ctx.fillRect(160,90, 40, 40,);
+        ctx.fill();
+        ctx.stroke();
+
+
+
+
+
+        //tubo
+        ctx.fillStyle = "#00A703";
+        ctx.beginPath();
+        ctx.fillRect(386, 260, 80, 80,);
+        ctx.fill();
+        ctx.stroke();
+
+        ctx.fillStyle = "#00A703";
+        ctx.beginPath();
+        ctx.fillRect(381, 240, 90, 35,);
+        ctx.fill();
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.moveTo(381, 240);
+        ctx.lineTo(381, 275);
+        ctx.lineTo(387, 275);
+        ctx.lineTo(387, 400);
+        ctx.lineTo(468, 400);
+        ctx.lineTo(466, 274);
+        ctx.lineTo(472, 274);
+        ctx.lineTo(472, 240);
+        ctx.lineTo(381, 240);
+        //ctx.fill();
+        ctx.stroke();
+        ctx.closePath();
+
+        ctx.beginPath();
+        ctx.moveTo(387, 275);
+        ctx.lineTo(472, 274);
+        
+        //ctx.fill();
+        ctx.stroke();
+        ctx.closePath();
+
+
+
+        //cuadro uno
+        ctx.fillStyle = "#000000";
+        ctx.beginPath();
+        ctx.fillRect(206, 190, 105, 185,);
+        ctx.fill();
+        ctx.stroke();
+
+        ctx.fillStyle = "#000000";
+        ctx.beginPath();
+        ctx.fillRect(188, 158, 105, 185,);
+        ctx.fill();
+        ctx.stroke();
+
+        ctx.fillStyle = "#157CCE";
+        ctx.beginPath();
+        ctx.fillRect(190, 160, 100, 190,);
+        //ctx.fill();
+        ctx.stroke();
+
+
+        //cuadro uno
+        ctx.fillStyle = "#000000";
+        ctx.beginPath();
+        ctx.fillRect(140, 255, 105, 85,);
+        ctx.fill();
+        ctx.stroke();
+
+        ctx.fillStyle = "#000000";
+        ctx.beginPath();
+        ctx.fillRect(127, 228, 105, 112,);
+        ctx.fill();
+        ctx.stroke();
+
+        ctx.fillStyle = "#FCA16C";
+        ctx.beginPath();
+        ctx.fillRect(130, 230, 100, 110,);
+        ctx.fill();
+        ctx.stroke();
+
+
+        ctx.fillStyle="#08BD03";
+        ctx.beginPath();
+        ctx.arc(40, 344, 20, 0, 2*Math.PI);
+        ctx.arc(50, 320, 20, 0, 2*Math.PI);
+        ctx.arc(70, 340, 20, 0, 2*Math.PI);
+        ctx.fill()
+        //plataforma
+        ctx.fillStyle = "#000000";
+        ctx.beginPath();
+        ctx.fillRect(0, 338, 600, 400,);
+        ctx.fill();
+        ctx.stroke();
+
+
+        ctx.fillStyle = "#FCA16C";
+        ctx.beginPath();
+        ctx.fillRect(0, 340, 600, 400,);
+        ctx.fill();
+        ctx.stroke();
+
+        ctx.fillStyle = "#CE7440";
+        ctx.beginPath();
+        ctx.fillRect(0, 360, 600, 450,);
+        ctx.fill();
+        ctx.stroke();
+
+        
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

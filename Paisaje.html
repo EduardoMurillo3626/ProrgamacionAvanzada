@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avatar</title>
+</head>
+<style>
+    canvas {
+        background: rgb(184, 184, 184);
+
+    }
+
+    body {
+        background-color: rgb(46, 46, 46);
+    }
+</style>
+
+<body>
+    <canvas id="mycanvas" width="500px" height="500px">
+
+    </canvas>
+
+
+    <script>
+        var canvas = document.getElementById('mycanvas');
+        var ctx = canvas.getContext('2d');
+
+
+
+        var grd = ctx.createLinearGradient(50, 50, 45, 280);
+        grd.addColorStop(0, "black");
+        grd.addColorStop(1, "#001767");
+
+        ctx.fillStyle = grd;
+        ctx.fillRect(0, 0, 500, 500);
+
+        generateRandomStars(500); // Dibuja 10 estrellas aleatorias
+        //montaa atras
+        ctx.fillStyle = "#ffffff";
+        ctx.beginPath();
+        ctx.moveTo(0, 400);
+        ctx.lineTo(159, 180);
+        ctx.lineTo(340, 425);
+        ctx.fill();
+        ctx.stroke();
+        ctx.closePath();
+        //sombra
+        ctx.fillStyle = "#DEDEDE";
+        ctx.beginPath();
+        ctx.moveTo(0, 400);
+        ctx.lineTo(158, 180);
+        ctx.lineTo(260, 425);
+        ctx.fill();
+        //ctx.stroke();
+        ctx.closePath();
+
+        ctx.fillStyle = '#ffffff';
+        ctx.fillRect(0, 400, 500, 100);
+        //montaña frente
+        ctx.fillStyle = "#ffffff";
+        ctx.beginPath();
+        ctx.moveTo(200, 480);
+        ctx.lineTo(380, 100);
+        ctx.lineTo(570, 480);
+        ctx.fill();
+        ctx.stroke();
+        ctx.closePath();
+        //sombra
+        ctx.fillStyle = "#dedede";
+        ctx.beginPath();
+        ctx.moveTo(250, 480);
+        ctx.lineTo(380, 100);
+        ctx.lineTo(570, 480);
+        ctx.fill();
+        //ctx.stroke();
+        ctx.closePath();
+
+        //luna
+        ctx.fillStyle = "#ffffff";
+        ctx.beginPath();
+        ctx.arc(350, 50, 40, 0, 2 * Math.PI);
+        ctx.fill();
+        ctx.stroke();
+
+
+
+        //monito
+        ctx.fillStyle = "#ffffff";
+        ctx.beginPath();
+        ctx.arc(40, 450, 15, 0, 2 * Math.PI);
+        ctx.fill();
+        ctx.stroke();
+
+        ctx.fillStyle = "#ffffff";
+        ctx.beginPath();
+        ctx.arc(40, 430, 12, 0, 2 * Math.PI);
+        ctx.fill();
+        ctx.stroke();
+
+        ctx.fillStyle = "#000000";
+        ctx.beginPath();
+        ctx.arc(35, 428, 1, 0, 2 * Math.PI);
+        ctx.fill();
+        ctx.stroke();
+
+        ctx.fillStyle = "#000000";
+        ctx.beginPath();
+        ctx.arc(45, 428, 1, 0, 2 * Math.PI);
+        ctx.fill();
+        ctx.stroke();
+
+        ctx.fillStyle = "#000000";
+        ctx.beginPath();
+        ctx.fillRect(30, 414, 20, 9,);
+        ctx.fill();
+        ctx.stroke();
+
+        ctx.fillStyle = "#000000";
+        ctx.beginPath();
+        ctx.fillRect(32.5, 409, 15, 10,);
+        ctx.fill();
+        ctx.stroke();
+
+        //nube
+        ctx.fillStyle = "rgba(246,245,245,0.26)";
+        ctx.beginPath();
+        ctx.arc(50, 50, 20, 0, 2 * Math.PI);
+        ctx.arc(80, 50, 20, 0, 2 * Math.PI);
+        ctx.arc(100, 50, 20, 0, 2 * Math.PI);
+        ctx.fill();
+        //ctx.stroke();
+
+        ctx.fillStyle = "rgba(246,245,245,0.26)";
+        ctx.beginPath();
+        ctx.arc(200, 100, 30, 0, 2 * Math.PI);
+        ctx.arc(250, 100, 30, 0, 2 * Math.PI);
+        ctx.arc(300, 100, 30, 0, 2 * Math.PI);
+        ctx.fill();
+        //ctx.stroke();
+
+
+        function drawStar(x, y) {
+            ctx.fillStyle = "#ffffff";
+            ctx.beginPath();
+            ctx.arc(x + 0, y + 10, 0.8, 1, 2 * Math.PI);
+            ctx.fill();
+            ctx.stroke();
+        }
+
+        function getRandomPosition(maxX, maxY) {
+            const x = Math.random() * maxX;
+            const y = Math.random() * maxY;
+            return { x, y };
+        }
+
+        function generateRandomStars(numStars) {
+            for (let i = 0; i < numStars; i++) {
+                const position = getRandomPosition(canvas.width - 5, canvas.height - 95);
+                drawStar(position.x, position.y);
+            }
+        }
+
+
+
+    </script>
+</body>
+
+</html>

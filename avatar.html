@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avatar</title>
+</head>
+<style>
+    canvas {
+        background: rgb(184, 184, 184);
+
+    }
+</style>
+
+<body>
+    <canvas id="mycanvas" width="500px" height="500px">
+
+    </canvas>
+
+
+    <script>
+        var canvas = document.getElementById('mycanvas');
+        var ctx = canvas.getContext('2d');
+
+
+
+
+
+
+
+        
+
+
+
+        ctx.fillStyle="#DE0000";
+        ctx.beginPath();
+        ctx.fillRect(206,250,60,25);
+        ctx.fill();
+        ctx.stroke();
+
+        //pierna izquierdo
+        ctx.fillStyle="#DE0000";
+        ctx.beginPath();
+        ctx.fillRect(238,260,28,107);
+        ctx.fill();
+        ctx.stroke();
+
+        //pierna izquierdo
+        ctx.fillStyle="#DE0000";
+        ctx.beginPath();
+        ctx.fillRect(206,260,28,107);
+        ctx.fill();
+        ctx.stroke();
+
+
+        //botas
+        ctx.fillStyle="#D1CA06";
+        ctx.beginPath();
+        ctx.fillRect(238,350,28,25);
+        ctx.fill();
+        ctx.stroke();
+
+        ctx.fillStyle="#D1CA06";
+        ctx.beginPath();
+        ctx.fillRect(206,350,28,25);
+        ctx.fill();
+        ctx.stroke();
+
+        //brazo izquierdo
+        ctx.fillStyle="#DE0000";
+        ctx.beginPath();
+        ctx.fillRect(265,160,20,107);
+        ctx.fill();
+        ctx.stroke();
+
+        ctx.fillStyle="#D1CA06";
+        ctx.beginPath();
+        ctx.fillRect(265,230,20,10);
+        ctx.fill();
+        ctx.stroke();
+
+        //brazo derecho
+        ctx.fillStyle="#DE0000";
+        ctx.beginPath();
+        ctx.fillRect(185,160,20,107);
+        ctx.fill();
+        ctx.stroke();
+
+        ctx.fillStyle="#D1CA06";
+        ctx.beginPath();
+        ctx.fillRect(185,230,20,10);
+        ctx.fill();
+        ctx.stroke();
+
+
+        //cinto
+        ctx.fillStyle="#D1CA06";
+        ctx.beginPath();
+        ctx.fillRect(205,170,60,80);
+        ctx.fill();
+        ctx.stroke();
+
+        //cuerpo
+        ctx.fillStyle="#DE0000";
+        ctx.beginPath();
+        ctx.fillRect(205,159,60,80);
+        ctx.fill();
+        ctx.stroke();
+
+        //cuello
+        ctx.fillStyle="#DE0000";
+        ctx.beginPath();
+        ctx.fillRect(222,150,25,10);
+        ctx.fill();
+        ctx.stroke();
+
+        //cabeza
+        ctx.fillStyle="#FFB368";
+        ctx.beginPath();
+        ctx.arc(235, 115, 40, 0, 2*Math.PI);
+        ctx.fill();
+        ctx.stroke();
+
+        //Flash
+        ctx.fillStyle="#DE0000";
+        ctx.beginPath();
+        ctx.arc(235, 115, 40, 3.2, 2*Math.PI);
+        ctx.fill();
+        ctx.stroke();
+
+        ctx.fillStyle = "#DE0000";
+        ctx.beginPath();
+        ctx.fillRect(196,110,78,18);
+        ctx.moveTo(195,128);
+        ctx.lineTo(235,138);
+        ctx.lineTo(275,128);
+        ctx.fill();
+        ctx.closePath();
+
+        //Flash
+        ctx.fillStyle="#FFff";
+        ctx.beginPath();
+        ctx.arc(235, 190, 20, 0, 2*Math.PI);
+        ctx.fill();
+        ctx.stroke();
+
+        //ojos
+        ctx.fillStyle = "#ffffff";
+        ctx.beginPath();
+        ctx.moveTo(200,113);
+        ctx.lineTo(210,125);
+        ctx.lineTo(230,120);
+        ctx.fill();
+        ctx.stroke();
+        ctx.closePath();
+
+        ctx.fillStyle = "#ffffff";
+        ctx.beginPath();
+        ctx.moveTo(270,112);
+        ctx.lineTo(239,120);
+        ctx.lineTo(259,125);
+        ctx.fill();
+        ctx.stroke();
+        ctx.closePath();
+
+        //rayo
+        ctx.strokeStyle = "#C6BF00";
+        ctx.beginPath();
+        ctx.lineTo(242,169);
+        ctx.lineTo(229,185);
+        ctx.lineTo(245,179);
+        ctx.lineTo(228,195);
+        ctx.lineTo(240,190);
+        ctx.lineTo(226,208);
+        ctx.stroke();
+        ctx.closePath();
+
+
+        
+
+
+    </script>
+</body>
+
+</html>
