@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sonic</title>
+</head>
+<style>
+    canvas {
+        background: rgb(110, 162, 240);
+
+    }
+
+    body {
+        background-color: rgb(46, 46, 46);
+    }
+</style>
+
+<body>
+    <canvas id="mycanvas" width="600px" height="400px">
+
+    </canvas>
+
+
+    <script>
+
+
+        var canvas = document.getElementById('mycanvas');
+        var ctx = canvas.getContext('2d');
+
+        cuadros();
+        base();
+        aros();
+        palmera();
+
+
+
+        function palmera() {
+            ctx.fillStyle = "#906907";
+            ctx.beginPath();
+            ctx.fillRect(390, 160, 10, 300,);
+            ctx.fill();
+            ctx.stroke();
+
+            ctx.fillStyle = "#0EB601";
+            ctx.beginPath();
+            ctx.moveTo(430, 280);
+            ctx.lineTo(400, 140);
+            ctx.lineTo(300, 169);
+            ctx.fill();
+            ctx.closePath();
+
+            ctx.fillStyle = "#0EB601";
+            ctx.beginPath();
+            ctx.moveTo(300, 290);
+            ctx.lineTo(490, 180);
+            ctx.lineTo(340, 165);
+            ctx.fill();
+            ctx.closePath();
+
+            ctx.fillStyle = "#0EB601";
+            ctx.beginPath();
+            ctx.moveTo(380, 340);
+            ctx.lineTo(450, 100);
+            ctx.lineTo(340, 165);
+            ctx.fill();
+            ctx.closePath();
+
+        }
+
+        function aros() {
+
+            ctx.fillStyle = "yellow";
+            ctx.beginPath();
+            ctx.arc(90, 424, 24, 0, 2 * Math.PI);
+            ctx.fill();
+            ctx.stroke();
+
+            ctx.fillStyle = "blue";
+            ctx.beginPath();
+            ctx.arc(90, 424, 20, 0, 2 * Math.PI);
+            ctx.fill();
+            ctx.stroke();
+
+            ctx.fillStyle = "yellow";
+            ctx.beginPath();
+            ctx.arc(170, 424, 24, 0, 2 * Math.PI);
+            ctx.fill();
+            ctx.stroke();
+
+            ctx.fillStyle = "blue";
+            ctx.beginPath();
+            ctx.arc(170, 424, 20, 0, 2 * Math.PI);
+            ctx.fill();
+            ctx.stroke();
+
+            ctx.fillStyle = "yellow";
+            ctx.beginPath();
+            ctx.arc(250, 424, 24, 0, 2 * Math.PI);
+            ctx.fill();
+            ctx.stroke();
+
+            ctx.fillStyle = "blue";
+            ctx.beginPath();
+            ctx.arc(250, 424, 20, 0, 2 * Math.PI);
+            ctx.fill();
+            ctx.stroke();
+
+
+        }
+
+
+
+        function base() {
+            ctx.fillStyle = "blue";
+            ctx.beginPath();
+            ctx.fillRect(0, 0, 600, 500,);
+            ctx.fill();
+            ctx.stroke();
+
+
+            ctx.fillStyle = "#08BD03";
+            ctx.beginPath();
+            ctx.fillRect(0, 460, 600, 20,);
+            ctx.fill();
+            ctx.stroke();
+
+            ctx.fillStyle = "#048600";
+            ctx.beginPath();
+            ctx.fillRect(0, 480, 600, 20,);
+            ctx.fill();
+            ctx.stroke();
+
+            ctx.fillStyle = "#045A01";
+            ctx.beginPath();
+            ctx.fillRect(0, 500, 600, 20,);
+            ctx.fill();
+            ctx.stroke();
+
+            ctx.fillStyle = "rgba(0,0,0,0.5)";
+            ctx.beginPath();
+            ctx.fillRect(0, 520, 600, 28,);
+            ctx.fill();
+            ctx.stroke();
+
+        }
+
+        function cuadros() {
+            const Tamañocanvas = 600;
+            const Cuadrosfila = 20;
+            const tamaño = Tamañocanvas / Cuadrosfila;
+
+            canvas.width = Tamañocanvas;
+            canvas.height = Tamañocanvas;
+
+            // Variable para alternar el color de los cuadros
+            let isBrown = false;
+
+            for (let row = 0; row < Cuadrosfila; row++) {
+                for (let col = 0; col < Cuadrosfila; col++) {
+                    // Dibuja el cuadro en la posición actual
+                    ctx.fillStyle = isBrown ? '#8B4513' : '#D2B48C';
+                    ctx.fillRect(col * tamaño, row * tamaño, tamaño, tamaño);
+
+                    // Alterna el color para el siguiente cuadro
+                    isBrown = !isBrown;
+                }
+                isBrown = !isBrown;
+            }
+
+        }
+
+
+
+    </script>
+</body>
+
+</html>
